@@ -27,6 +27,11 @@ map <C-k>b :NERDTreeToggle<CR>
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Lokaltog/vim-easymotion'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,3 +47,12 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+set laststatus=2
+
+syntax enable
+set background=dark
+colorscheme solarized
+
+set t_Co=256                        " force vim to use 256 colors
+let g:solarized_termcolors=256      " use solarized 256 fallback

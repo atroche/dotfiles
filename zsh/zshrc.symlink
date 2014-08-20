@@ -40,3 +40,6 @@ done
 unset config_files
 
 export PATH=/home/aroche/bin:$PATH
+
+export TERM="screen-256color"
+alias tmux="tmux -2"
