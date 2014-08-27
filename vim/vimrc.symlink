@@ -33,6 +33,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fireplace'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'paredit.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -67,3 +69,13 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+
+" vim clojure speclj
+autocmd FileType clojure setlocal lispwords+=describe,it,context
+
+" stop ridiculous newlines
+let g:paredit_electric_return=0
+
+" better clj data structure nav
+let g:paredit_smartjump=1
+
