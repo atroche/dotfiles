@@ -35,6 +35,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'paredit.vim'
+Plugin 'tpope/vim-sleuth'
 Plugin 'airblade/vim-gitgutter'
 
 
