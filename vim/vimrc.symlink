@@ -35,6 +35,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'paredit.vim'
+Plugin 'airblade/vim-gitgutter'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,3 +81,4 @@ let g:paredit_electric_return=0
 " better clj data structure nav
 let g:paredit_smartjump=1
 
+hi clear SignColumn
