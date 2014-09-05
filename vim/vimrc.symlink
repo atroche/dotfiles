@@ -6,6 +6,9 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+" For making yanks and deletions work with OS X clipboard from terminal
+set clipboard=unnamed
+
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
 
