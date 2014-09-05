@@ -39,6 +39,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'paredit.vim'
 Plugin 'tpope/vim-sleuth'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'christoomey/vim-tmux-navigator'
 
 
 " All of your Plugins must be added before the following line
