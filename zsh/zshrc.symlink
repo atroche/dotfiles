@@ -45,3 +45,8 @@ export TERM="screen-256color"
 alias tmux="tmux -2"
 
 export SAUCE_USERNAME=aroche
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+autoload -U compinit && compinit -u
