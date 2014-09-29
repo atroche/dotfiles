@@ -39,10 +39,13 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
 Plugin 'paredit.vim'
 Plugin 'tpope/vim-sleuth'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-classpath'
 
 
 " All of your Plugins must be added before the following line
@@ -89,6 +92,10 @@ let g:paredit_electric_return=0
 let g:paredit_smartjump=1
 
 " auto-remove whitespace
-autocmd BufWritePre *.clj :%s/\s\+$//e
+autocmd BufWritePre *.clj* :%s/\s\+$//e
 
 hi clear SignColumn
+
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^defcomponent']
+let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn,render,render-state,will-mount,init-state,go'
