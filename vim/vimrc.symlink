@@ -43,6 +43,9 @@ Plugin 'paredit.vim'
 Plugin 'tpope/vim-sleuth'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-dispatch'
+Plugin 'thoughtbot/vim-rspec'
 
 
 " All of your Plugins must be added before the following line
@@ -90,5 +93,14 @@ let g:paredit_smartjump=1
 
 " auto-remove whitespace
 autocmd BufWritePre *.clj :%s/\s\+$//e
+autocmd BufWritePre *.rb :%s/\s\+$//e
 
 hi clear SignColumn
+
+set smartcase
+
+
+let g:rspec_command = "Dispatch spring rspec {spec}"
+
+set foldmethod=syntax
+
