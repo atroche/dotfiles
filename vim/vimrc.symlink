@@ -105,7 +105,6 @@ set smartcase
 
 let g:rspec_command = "Dispatch spring rspec {spec}"
 
-set foldmethod=syntax
 
 hi clear SignColumn
 
