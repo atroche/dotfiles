@@ -1,11 +1,19 @@
-#!/usr/bin/env bash
+#!/usr/bin/zsh
 #
 # Run all dotfiles installers.
 
-set -e
+echo $path_files
 
-cd "$(dirname $0)"/..
+has_brew() { [[ -x `which brew` ]] }
+is_mac() { [[ $OSTYPE == darwin* ]] }
+is_freebsd() { [[ $OSTYPE == freebsd* ]] }
+is_linux() { [[ $OSTYPE == linux-gnu ]] }
 
-# find the installers and run them iteratively
-./brew/install.sh
-find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+source ./brew/install.sh
+
+for file in ${ZSH}/**/install.sh
+do
+  source $file
+done
+
+
