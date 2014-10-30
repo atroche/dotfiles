@@ -1,6 +1,11 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
+is_mac() { [[ $OSTYPE == darwin* ]] }
+is_freebsd() { [[ $OSTYPE == freebsd* ]] }
+is_linux() { [[ $OSTYPE == linux-gnu ]] }
+has_brew() { [[ -x `which brew` ]] }
+
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 
@@ -11,12 +16,14 @@ then
   source ~/.localrc
 fi
 
-# all of our zsh files
+typeset -U path
+path=(/home/aroche/bin $path)
+
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
 
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
+path_files=${(M)config_files:#*/path.zsh}
+for file in $path_files
 do
   source $file
 done
@@ -39,14 +46,9 @@ done
 
 unset config_files
 
-export PATH=/home/aroche/bin:$PATH
-
 export TERM="screen-256color"
 alias tmux="tmux -2"
 
 export SAUCE_USERNAME=aroche
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 autoload -U compinit && compinit -u
