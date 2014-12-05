@@ -44,3 +44,6 @@ alias tmux="tmux -2"
 export SAUCE_USERNAME=aroche
 
 autoload -U compinit && compinit -u
+
+# stop ctrl-s from hanging some terminal emulators
+stty -ixon
