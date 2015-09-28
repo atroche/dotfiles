@@ -51,6 +51,16 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-classpath'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/yajs'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -98,13 +108,14 @@ let g:paredit_smartjump=1
 " auto-remove whitespace
 autocmd BufWritePre *.clj :%s/\s\+$//e
 autocmd BufWritePre *.rb :%s/\s\+$//e
+autocmd BufWritePre *.js :%s/\s\+$//e
 
 hi clear SignColumn
 
 set smartcase
 
 
-let g:rspec_command = "Dispatch spring rspec {spec}"
+let g:rspec_command = "Dispatch rspec {spec}"
 
 
 hi clear SignColumn
@@ -112,3 +123,13 @@ hi clear SignColumn
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^defcomponent']
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn,render,render-state,will-mount,init-state,go'
+nnoremap <leader>e :Eval<CR>
+
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>
+
+au FileType qf call AdjustWindowHeight(3, 30)
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction

@@ -47,3 +47,21 @@ autoload -U compinit && compinit -u
 
 # stop ctrl-s from hanging some terminal emulators
 stty -ixon
+
+[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+
+fortune
+
+# Add GHC 7.10.1 to the PATH, via https://ghcformacosx.github.io/
+export GHC_DOT_APP="/Applications/ghc-7.10.1.app"
+if [ -d "$GHC_DOT_APP" ]; then
+ export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
+fi
+
+# ADDED BY DOCKER-IMAGES
+source /Users/aroche/Code/zendesk/docker-images/dockmaster/zdi.sh
